@@ -40,7 +40,9 @@ def ai_shot():
         valid_targets.add(target - 1)
     if target < 90:
         valid_targets.add(target + 10)
-    choice = random.choice(list(remaining_choices & valid_targets))
+    probable_targets = list(remaining_choices & valid_targets)
+    if not probable_targets: return take_a_punt()
+    choice = random.choice(probable_targets)
     print(index_to_coord(choice))
     remaining_choices.remove(choice)
     return choice
