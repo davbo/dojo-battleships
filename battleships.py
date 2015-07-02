@@ -24,9 +24,9 @@ def take_a_punt():
 def did_we_hit(choice):
     global target
     result = input()
-    if result == 'H':
+    if result == 'h':
         target = choice
-    elif result == 'S':
+    elif result == 's':
         target = None
     state_of_play[choice] = result
 
